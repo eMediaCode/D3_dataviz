@@ -12,5 +12,5 @@
 
 [html source files](https://github.com/reshama/D3_dataviz/tree/master/d3_challenges)
 
-Take one of these Bostock examples and use your own data to make your own visualization.
+Take one of these Bostock examples and use your own data to make your own visualization.<br>
 [My D3 visualization examples implemented on a website](http://reshama.nyc/analytics-portfolio/d3-graphics-2/)
