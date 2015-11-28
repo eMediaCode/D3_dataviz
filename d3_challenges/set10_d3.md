@@ -11,3 +11,6 @@
 [Challenge 5](http://htmlpreview.github.com/?https://github.com/reshama/D3_dataviz/blob/master/d3_challenges/set10_d3_ch5_triangle.html)
 
 [html source files](https://github.com/reshama/D3_dataviz/tree/master/d3_challenges)
+
+Take one of these Bostock examples and use your own data to make your own visualization.
+[My D3 examples implemented on a website] D3 Visi(http://reshama.nyc/analytics-portfolio/d3-graphics-2/)
