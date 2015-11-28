@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>A Page Template for Our Session!</title>
+        <!-- d3 reference snippet -->
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+            /* Any CSS style rules can go here */
+            .metisText{
+                font-family: "Garamond";
+            }
+        </style>
+    </head>
+    <body>
+ 
+<p style="font-size:14px;">Challenge Set:  10</p>
+<p style="font-size:14px;">Topic:          D3 Visualization </p>
+<p style="font-size:14px;">Updated By:     Reshama  </p>
+<p style="font-size:14px;">Date Updated:   11/27/15 </p>
+<hr>
+
+<p style="font-size:14px;">References</p>
+
+<a href="https://www.dashingd3js.com/svg-basic-shapes-and-d3js">SVG Basic Shapes and D3.js (Dashing D3)</a> <br>
+
+<a href="https://github.com/aberner6/workshop2015">Annelie Berner's Tutorial</a>
+<p></p>
+<hr>
+<p style="font-size:16px;">Challenge #2:  Make an SVG with five circles, ordered diagonally across the SVG.</p>
+
+
+
+<script type="text/javascript">
+
+var jsonCircles = [
+   { "x_axis": 50, "y_axis":  50, "radius": 10, "color" : "green" ,
+   "outline_color" : "yellow" },
+   { "x_axis": 150, "y_axis": 150, "radius": 20, "color" : "purple",
+   "outline_color" : "green" },
+   { "x_axis": 250, "y_axis": 250, "radius": 30, "color" : "red",
+   "outline_color" : "blue"},
+   { "x_axis": 350, "y_axis": 350, "radius": 40, "color" : "blue",
+   "outline_color" : "red"},
+   { "x_axis": 450, "y_axis": 450, "radius": 50, "color" : "yellow",
+   "outline_color" : "pink"}
+   ];
+ 
+var svgContainer = d3.select("body").append("svg")
+                                     .attr("width", 1000)
+                                     .attr("height", 1000)
+                                     ;
+ 
+var circles = svgContainer.selectAll("circle")
+                          .data(jsonCircles)
+                          .enter()
+                          .append("circle")
+                          ;
+var addx = 50;
+var addy = 50;
+var addr = 10;
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return d.x_axis + addx; })
+                       .attr("cy", function (d) { return d.y_axis + addy; })
+                       .attr("r", function (d) { return d.radius + addr ; })
+                       .style("stroke", function(d) { return d.outline_color; })
+                       .style("fill", function(d)    { return d.color; })
+                       ;
+
+
+        </script>
+    </body>
+</html>

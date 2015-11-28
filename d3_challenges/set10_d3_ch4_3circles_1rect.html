@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>A Page Template for Our Session!</title>
+        <!-- d3 reference snippet -->
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+            /* Any CSS style rules can go here */
+            .metisText{
+                font-family: "Garamond";
+            }
+        </style>
+    </head>
+    <body>
+
+
+<p style="font-size:14px;">Challenge Set:  10</p>
+<p style="font-size:14px;">Topic:          D3 Visualization </p>
+<p style="font-size:14px;">Updated By:     Reshama  </p>
+<p style="font-size:14px;">Date Updated:   11/27/15 </p>
+<hr>
+
+<p style="font-size:14px;">References</p>
+
+<a href="https://www.dashingd3js.com/svg-basic-shapes-and-d3js">SVG Basic Shapes and D3.js (Dashing D3)</a> <br>
+
+<a href="https://github.com/aberner6/workshop2015">Annelie Berner's Tutorial</a>
+<p></p>
+<hr>
+<p style="font-size:16px;">Challenge #4:  Make an SVG with 3 circles and 1 rectangle. </p>
+<script type="text/javascript">
+
+
+var jsonCircles = [
+   { "x_axis": 30, "y_axis": 30, "radius": 20, "color" : "green" },
+   { "x_axis": 80, "y_axis": 30, "radius": 20, "color" : "purple"},
+   { "x_axis": 130, "y_axis": 30, "radius": 20, "color" : "red"}];
+
+var jsonRectangles = [
+    { "x_axis": 180, "y_axis": 30, "r_width": 50, "r_height": 100, "r_fill": "blue"},
+    { "x_axis": 250, "y_axis": 30, "r_width": 50, "r_height": 100, "r_fill": "green"}
+    ];
+ 
+var svgContainer = d3.select("body").append("svg")
+                                     .attr("width", 700)
+                                     .attr("height", 700)
+                                     ;
+ 
+
+var circles = svgContainer.selectAll("circle")
+                          .data(jsonCircles)
+                          .enter()
+                          .append("circle")
+                          ;
+
+var rectangles = svgContainer.selectAll("rect")
+                          .data(jsonRectangles)
+                          .enter()
+                          .append("rect")
+                          ;
+
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return d.x_axis; })
+                       .attr("cy", function (d) { return d.y_axis; })
+                       .attr("r", function (d) { return d.radius; })
+                       .style("fill", function(d) { return d.color; });
+
+var rectAttributes = rectangles
+                       .attr("x", function (d) { return d.x_axis; })
+                       .attr("y", function (d) { return d.y_axis; })
+                       .attr("width", function (d) { return d.r_width; })
+                       .attr("height", function (d) { return d.r_height; })
+                       .style("fill", function(d) { return d.r_fill; });
+
+
+        </script>
+    </body>
+</html>
